@@ -1,0 +1,426 @@
+/* =========================================================================
+   JSICP '26 — Jewish Spirituality in Clinical Practice
+   Brand tokens: colors, typography, spacing, radii, shadows.
+   Produced by The Wellness Institute.
+   ========================================================================= */
+
+/* ---- Font ---------------------------------------------------------------
+   Brand typefaces (user-provided):
+   • **Acumin Variable Concept** — PRIMARY display face for all headers.
+     Variable axes: weight 100–900, width 50–200, slant 0–−10.
+   • **Sharp Sans Bold / Bold Italic** — secondary display (used on labels,
+     UI chrome, marketing accents).
+   • **Sharp Slab Medium / Medium Italic** — slab serif for pull quotes
+     and long-form editorial copy.
+   • **Founders Grotesk Text Light / Regular** — primary body face.
+   DM Sans still bridges medium/bold body runs until Founders Grotesk Text
+   Medium / Semibold are provided.
+   ------------------------------------------------------------------------- */
+@font-face {
+  font-family: 'Acumin Variable';
+  src: url('fonts/AcuminVariableConcept.otf') format('opentype-variations'),
+       url('fonts/AcuminVariableConcept.otf') format('opentype');
+  font-weight: 100 900;
+  font-stretch: 50% 200%;
+  font-style: oblique -10deg 0deg;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Sharp Sans';
+  src: url('fonts/SharpSans-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Sharp Sans';
+  src: url('fonts/SharpSans-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+/* Alias weight 800 to Bold so --fw-black still renders. */
+@font-face {
+  font-family: 'Sharp Sans';
+  src: url('fonts/SharpSans-Bold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Sharp Slab';
+  src: url('fonts/SharpSlab-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Sharp Slab';
+  src: url('fonts/SharpSlab-MediumItalic.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Sharp Slab';
+  src: url('fonts/SharpSlab-Medium.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Founders Grotesk Text';
+  src: url('fonts/FoundersGroteskText-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Founders Grotesk Text';
+  src: url('fonts/FoundersGroteskText-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=DM+Mono:wght@400;500&display=swap');
+
+:root {
+  /* =====================================================================
+     COLOR — Teal wash
+     The master background is a diagonal gradient that runs from a bright
+     upper-left highlight (--teal-50) down through the mid brand teal
+     (--teal-400) into the deepest near-black navy at the bottom-right
+     (--ink-900). Individual bands of the flyer sit at different points
+     along this gradient: lighter up top, deeper toward the footer.
+     All hex values were sampled directly from the flyer and key art.
+     ===================================================================== */
+
+  --teal-50:   #C9EDEB;  /* highlight wash — upper-left of master gradient */
+  --teal-100:  #9DD4D9;  /* soft mint — light section bg */
+  --teal-200:  #69BCBA;  /* lifted mid teal */
+  --teal-300:  #53B4B2;  /* mid band bg */
+  --teal-400:  #42ACB9;  /* brand mid teal — pill surface, gradient middle */
+  --teal-500:  #33A29E;  /* brand primary — accent text on dark */
+  --teal-600:  #2A8080;  /* quieter primary */
+  --teal-700:  #1E6A67;  /* deep teal — footer top */
+  --teal-800:  #163E42;  /* very dark teal — speaker band bg */
+  --teal-900:  #152A2D;  /* deepest teal — near black, master gradient end */
+
+  /* Bright keynote accent — sampled from "Keynote Speakers Include",
+     "wellnessinstitute.org", and "Sunday, May 31, 2026" */
+  --teal-bright: #38F2EC;  /* electric cyan — section titles + hot accents */
+
+  --ink-900:   #0F2124;  /* deepest ink */
+  --ink-800:   #152A2D;
+  --ink-700:   #1B4C54;
+
+  --white:     #FFFFFF;
+  --white-90:  rgba(255,255,255,0.90);
+  --white-80:  rgba(255,255,255,0.80);  /* body copy on dark */
+  --white-64:  rgba(255,255,255,0.64);  /* subdued copy on dark */
+  --white-40:  rgba(255,255,255,0.40);
+  --white-16:  rgba(255,255,255,0.16);  /* hairlines on dark */
+  --white-08:  rgba(255,255,255,0.08);
+
+  /* Semantic foreground / background — a dark-first palette.
+     JSICP lives on a teal wash; swap these for the light-section tokens
+     (--sfg-*-on-light) when you invert onto a pale mint surface. */
+  --fg:        var(--white);
+  --fg-muted:  var(--white-80);
+  --fg-subtle: var(--white-64);
+  --fg-accent: var(--teal-bright);
+  --fg-on-light: var(--ink-900);
+
+  --bg:         var(--teal-800);
+  --bg-elev:    var(--teal-700);
+  --bg-light:   var(--teal-300);
+  --bg-lighter: var(--teal-100);
+
+  --border:     var(--white-16);
+  --border-strong: var(--white-40);
+
+  /* =====================================================================
+     SIGNATURE MASTER GRADIENT
+     Every JSICP surface is built on top of this. It is a radial that
+     starts warm-light in the upper-left and falls to deep navy in the
+     lower-right, overlaid with the topographic line pattern.
+     ===================================================================== */
+  --jsicp-gradient:
+    radial-gradient(140% 120% at 15% 0%,
+      #C9EDEB 0%,
+      #9DD4D9 12%,
+      #5FC5C2 30%,
+      #2A9A99 55%,
+      #1B5B5E 78%,
+      #152A2D 100%
+    );
+
+  --jsicp-gradient-light:
+    radial-gradient(140% 120% at 15% 0%,
+      #DDF3F1 0%,
+      #9DD4D9 35%,
+      #5FC5C2 70%,
+      #2A9A99 100%
+    );
+
+  --jsicp-gradient-deep:
+    radial-gradient(140% 120% at 15% 0%,
+      #2A9A99 0%,
+      #1E6A67 35%,
+      #163E42 70%,
+      #0F2124 100%
+    );
+
+  /* =====================================================================
+     TYPOGRAPHY
+     ===================================================================== */
+  /* Acumin Variable is the primary display face for headers. Sharp Sans is a
+     secondary display used for labels and marketing accents. Sharp Slab is
+     the slab serif used for pull quotes. Founders Grotesk Text is the body
+     face; DM Sans bridges missing medium/bold body weights. */
+  --font-display: 'Acumin Variable', 'Sharp Sans', 'Founders Grotesk Text', 'DM Sans', 'Neue Haas Grotesk', 'Helvetica Neue', sans-serif;
+  --font-accent:  'Sharp Sans', 'Acumin Variable', 'DM Sans', 'Neue Haas Grotesk', 'Helvetica Neue', sans-serif;
+  --font-serif:   'Sharp Slab', 'Tiempos Text', 'Freight Text Pro', Georgia, serif;
+  --font-sans:    'Founders Grotesk Text', 'DM Sans', 'Acumin Variable', 'Neue Haas Grotesk', 'Helvetica Neue',
+                  -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono:    'DM Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* Type scale — lifted from the flyer hierarchy.
+     Display = the huge "Jewish Spirituality in Clinical Practice" treatment.
+     Titles drop 2–3 steps down; body sits at 16–17px; caption at 13–14. */
+  --fs-display-xl: clamp(56px, 7vw, 112px);  /* title-slide headline */
+  --fs-display:    clamp(40px, 5vw, 72px);   /* flyer headline */
+  --fs-h1:         40px;                      /* section headlines */
+  --fs-h2:         28px;                      /* "Sorry, Freud." / "Keynote Speakers Include" */
+  --fs-h3:         22px;                      /* speaker name */
+  --fs-h4:         18px;                      /* card title */
+  --fs-lead:       20px;                      /* lead paragraph */
+  --fs-body:       16px;                      /* body copy */
+  --fs-sm:         14px;                      /* speaker affiliation */
+  --fs-xs:         12px;                      /* small print, footnotes */
+
+  --lh-tight:   1.05;   /* display */
+  --lh-snug:    1.15;   /* headlines */
+  --lh-normal:  1.45;   /* body */
+  --lh-relaxed: 1.6;    /* long form */
+
+  --tracking-display: -0.02em;  /* Jewish Spirituality ... slightly tight */
+  --tracking-tight:   -0.01em;
+  --tracking-normal:  0em;
+  --tracking-wide:    0.02em;   /* all-caps labels */
+
+  --fw-regular: 400;
+  --fw-medium:  500;
+  --fw-bold:    700;
+  --fw-black:   800;
+
+  /* =====================================================================
+     SPACING — 4px base grid
+     ===================================================================== */
+  --sp-1:  4px;
+  --sp-2:  8px;
+  --sp-3:  12px;
+  --sp-4:  16px;
+  --sp-5:  24px;
+  --sp-6:  32px;
+  --sp-7:  48px;
+  --sp-8:  64px;
+  --sp-9:  96px;
+  --sp-10: 128px;
+
+  /* =====================================================================
+     RADIUS — soft, but not playful. Pills are full round.
+     ===================================================================== */
+  --r-sm:   6px;
+  --r-md:   10px;
+  --r-lg:   16px;   /* cards */
+  --r-xl:   24px;   /* large hero cards */
+  --r-pill: 999px;  /* explore topic chips */
+  --r-circle: 50%;  /* speaker avatars */
+
+  /* =====================================================================
+     SHADOWS
+     The brand does not use heavy drop shadows. Elevation on the dark wash
+     is conveyed by value shift — a slightly lighter surface — not shadow.
+     These exist for when a card lifts off a light section.
+     ===================================================================== */
+  --shadow-1: 0 1px 2px rgba(15, 33, 36, 0.08);
+  --shadow-2: 0 6px 16px rgba(15, 33, 36, 0.12);
+  --shadow-3: 0 18px 40px rgba(15, 33, 36, 0.18);
+  /* Teal-tinted glow used behind the mic/keynote art */
+  --glow-teal: 0 0 80px rgba(56, 242, 236, 0.35);
+
+  /* =====================================================================
+     MOTION
+     Calm, clinical. No bounces. Short fades, ease-out.
+     ===================================================================== */
+  --ease-out:  cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast:   140ms;
+  --dur-base:   220ms;
+  --dur-slow:   360ms;
+
+  /* =====================================================================
+     LAYOUT
+     ===================================================================== */
+  --content-max: 1120px;
+  --flyer-max:    560px;  /* the printed/PDF flyer column width */
+}
+
+/* =========================================================================
+   SEMANTIC ELEMENT DEFAULTS
+   These apply the tokens above to raw HTML tags so a plain <h1>, <p>, etc
+   rendered inside a .jsicp scope already looks on-brand.
+   ========================================================================= */
+
+.jsicp,
+.jsicp * {
+  box-sizing: border-box;
+}
+
+.jsicp {
+  font-family: var(--font-sans);
+  font-size: var(--fs-body);
+  line-height: var(--lh-normal);
+  color: var(--fg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "ss01" on, "cv11" on;
+}
+
+.jsicp h1, .jsicp .h1,
+.jsicp h2, .jsicp .h2,
+.jsicp h3, .jsicp .h3,
+.jsicp h4, .jsicp .h4 {
+  font-family: var(--font-display);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-snug);
+  letter-spacing: var(--tracking-tight);
+  color: var(--fg);
+  margin: 0;
+}
+
+.jsicp h1, .jsicp .h1 {
+  font-size: var(--fs-h1);
+  line-height: var(--lh-tight);
+}
+.jsicp h2, .jsicp .h2 { font-size: var(--fs-h2); }
+.jsicp h3, .jsicp .h3 { font-size: var(--fs-h3); }
+.jsicp h4, .jsicp .h4 { font-size: var(--fs-h4); }
+
+.jsicp .display {
+  font-family: var(--font-display);
+  font-size: var(--fs-display);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tracking-display);
+}
+.jsicp .display-xl {
+  font-family: var(--font-display);
+  font-size: var(--fs-display-xl);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tracking-display);
+}
+
+.jsicp p, .jsicp .body {
+  font-size: var(--fs-body);
+  line-height: var(--lh-relaxed);
+  color: var(--fg-muted);
+  margin: 0;
+  text-wrap: pretty;
+}
+
+.jsicp .lead {
+  font-size: var(--fs-lead);
+  line-height: var(--lh-normal);
+  color: var(--fg-muted);
+}
+
+.jsicp .eyebrow,
+.jsicp .kicker {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--fg-accent);
+}
+
+.jsicp .small,
+.jsicp small {
+  font-size: var(--fs-xs);
+  line-height: var(--lh-normal);
+  color: var(--fg-subtle);
+}
+
+/* Bright-teal section title used throughout the flyer
+   ("Keynote Speakers Include", "Explore:", "wellnessinstitute.org/..."). */
+.jsicp .section-title {
+  font-family: var(--font-display);
+  color: var(--teal-bright);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-h2);
+  letter-spacing: var(--tracking-tight);
+}
+
+.jsicp .accent { color: var(--teal-bright); }
+
+.jsicp a {
+  color: var(--teal-bright);
+  text-decoration: none;
+}
+.jsicp a:hover { opacity: 0.8; }
+
+/* Block-quote style used for the pull quotes on the light mint band */
+.jsicp blockquote,
+.jsicp .pullquote {
+  font-family: var(--font-serif);
+  font-size: var(--fs-lead);
+  line-height: var(--lh-normal);
+  color: var(--ink-900);
+  font-weight: 500;
+  letter-spacing: var(--tracking-tight);
+  margin: 0;
+  padding: 0;
+  quotes: "\201C" "\201D";
+}
+.jsicp blockquote cite,
+.jsicp .pullquote cite {
+  display: block;
+  margin-top: var(--sp-4);
+  font-style: normal;
+  font-size: var(--fs-sm);
+  color: var(--ink-900);
+  opacity: 0.75;
+}
+
+/* =========================================================================
+   BACKGROUND UTILITIES
+   ========================================================================= */
+
+.jsicp-bg {
+  background: var(--jsicp-gradient);
+  color: var(--fg);
+  position: relative;
+}
+.jsicp-bg-light {
+  background: var(--jsicp-gradient-light);
+  color: var(--ink-900);
+}
+.jsicp-bg-deep {
+  background: var(--jsicp-gradient-deep);
+  color: var(--fg);
+}
+
+/* Topographic / contour line pattern — ALWAYS use the original flyer asset
+   `assets/bg-topo-pattern.png` directly. The gradient and contour lines are
+   baked into this single image; do not attempt to recreate, synthesize, or
+   overlay a line pattern on top of a flat gradient. If a surface needs the
+   pattern, layer the PNG as the background image (background-image with the
+   url, plus center/cover, over var(--jsicp-gradient)) and crop via `background-position`
+   to pull the specific tonal band you want. */
+.jsicp-topo {
+  background-image: url('assets/bg-topo-pattern.png');
+  background-size: cover;
+  background-position: center;
+}
