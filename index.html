@@ -172,7 +172,49 @@
   footer .fmeta{text-align:right;line-height:1.5}
   footer b{color:var(--white-90);font-weight:600}
 
+  /* ===== INSIDE THE SESSIONS (light) ===== */
+  .insight-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:58px}
+  .insight{background:var(--white);border:1px solid rgba(15,33,36,.08);border-radius:var(--r-lg);padding:30px 30px 28px;box-shadow:var(--shadow-1)}
+  .insight .ix{font-family:var(--font-display);font-weight:700;color:var(--teal-500);font-size:1.7rem;line-height:1}
+  .insight h3{font-size:1.28rem;color:var(--ink-900);margin:14px 0 10px;font-weight:700;line-height:1.2}
+  .insight p{font-size:1rem;color:var(--ink-700);line-height:1.55}
+
+  .pod-quotes{columns:2;column-gap:28px;margin-bottom:54px}
+  .pq{break-inside:avoid;background:var(--white);border:1px solid rgba(15,33,36,.08);border-radius:var(--r-lg);
+    padding:30px 30px 26px;margin-bottom:28px;position:relative}
+  .pq::before{content:"\201C";position:absolute;top:8px;left:18px;font-family:var(--font-serif);font-size:3.6rem;color:rgba(42,128,128,.2);line-height:1}
+  .pq p{font-family:var(--font-serif);font-size:1.16rem;line-height:1.48;color:var(--ink-900);position:relative;z-index:1;font-weight:500}
+  .pq .who{margin-top:16px;font-family:var(--font-accent);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--teal-700);font-weight:700}
+  .pq .who span{display:block;margin-top:3px;font-size:.74rem;letter-spacing:.04em;color:var(--ink-700);font-weight:600;text-transform:none}
+
+  .session-map{border-top:2px solid rgba(15,33,36,.16)}
+  .smrow{display:grid;grid-template-columns:.95fr 1.55fr;gap:28px;padding:18px 0;border-bottom:1px solid rgba(15,33,36,.12);align-items:baseline}
+  .smrow .who{font-family:var(--font-accent);font-weight:700;color:var(--ink-900);font-size:1.02rem;line-height:1.25}
+  .smrow .who small{display:block;font-family:var(--font-accent);font-weight:700;color:var(--teal-700);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;margin-top:5px}
+  .smrow p{font-size:1.02rem;color:var(--ink-700);line-height:1.5}
+
+  /* ===== IN THE ROOM — chat sentiment (dark) ===== */
+  .room .sec-head h2{color:#fff}
+  .room .sec-head p{color:var(--white-80)}
+  .room-grid{display:grid;grid-template-columns:1.35fr .65fr;gap:44px;align-items:start}
+  .chat-quotes{columns:2;column-gap:24px}
+  .cq{break-inside:avoid;background:var(--white-08);border:1px solid var(--white-16);border-radius:var(--r-lg);padding:24px 24px 22px;margin-bottom:24px}
+  .cq p{font-family:var(--font-serif);font-size:1.08rem;line-height:1.45;color:#fff;font-weight:500}
+  .cq .who{margin-top:13px;font-family:var(--font-accent);font-size:.72rem;letter-spacing:.05em;text-transform:uppercase;color:var(--teal-bright);font-weight:700}
+  .room-side{display:flex;flex-direction:column;gap:24px}
+  .room-card{background:var(--white-08);border:1px solid var(--white-16);border-radius:var(--r-lg);padding:28px}
+  .room-card h3{color:#fff;font-size:1.18rem;margin-bottom:16px;font-weight:700}
+  .room-card ul{list-style:none;display:flex;flex-direction:column;gap:12px}
+  .room-card li{font-size:.98rem;color:var(--white-80);line-height:1.4;padding-left:20px;position:relative}
+  .room-card li::before{content:"";position:absolute;left:0;top:9px;width:6px;height:6px;border-radius:50%;background:var(--teal-bright)}
+  .room-card p{font-size:.98rem;color:var(--white-80);line-height:1.55}
+  .room-card p b{color:#fff;font-weight:600}
+
   @media(max-width:900px){
+    .insight-grid{grid-template-columns:1fr}
+    .pod-quotes,.chat-quotes{columns:1}
+    .room-grid{grid-template-columns:1fr;gap:30px}
+    .smrow{grid-template-columns:1fr;gap:6px}
     .intro .grid,.coal-grid{grid-template-columns:1fr;gap:34px}
     .two{grid-template-columns:1fr}
     .band .grid{grid-template-columns:repeat(2,1fr);gap:30px}
@@ -307,6 +349,62 @@
   </div>
 </section>
 
+<!-- ===== INSIDE THE SESSIONS ===== -->
+<section class="band-pale" data-screen-label="Inside the Sessions">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <div class="eyebrow center">Inside the Sessions</div>
+      <h2>What the field actually heard</h2>
+      <p>Across six hours, fifteen researchers and clinicians built a single argument: the wisdom of Jewish tradition, tested against modern science, belongs in the therapy room.</p>
+    </div>
+
+    <div class="insight-grid">
+      <div class="insight reveal">
+        <div class="ix">01</div>
+        <h3>From antagonism to evidence</h3>
+        <p>For a century the field followed Freud, who dismissed religion as a "mass delusion." The summit retired that posture — thousands of peer-reviewed studies now frame spirituality as a measurable clinical resource, and an ethical mandate.</p>
+      </div>
+      <div class="insight reveal">
+        <div class="ix">02</div>
+        <h3>Spirituality is innate — and visible in the brain</h3>
+        <p>Lisa Miller's research locates a natural spiritual capacity that is roughly one-third inborn, two-thirds cultivated — and links a sustained spiritual life to dramatically lower rates of addiction, depression, and suicide.</p>
+      </div>
+      <div class="insight reveal">
+        <div class="ix">03</div>
+        <h3>Struggle as a doorway, not a defect</h3>
+        <p>Speaker after speaker reframed depression, trauma, and doubt as openings for growth — and named the clinician's task: to recognize spiritual injury and meet it with spiritual engagement, never bypass.</p>
+      </div>
+    </div>
+
+    <div class="pod-quotes reveal">
+      <div class="pq"><p>Spiritual assessment should be as routine as psychological, social, and physical assessment — an integral part of mental health care.</p><div class="who">Dr. Kenneth Pargament<span>Spiritually Integrated Psychotherapy</span></div></div>
+      <div class="pq"><p>We don't make the fire — but we are the carriers. It is through passing the torch that we strengthen our natural spiritual awareness.</p><div class="who">Dr. Lisa Miller<span>The Science of Spirituality</span></div></div>
+      <div class="pq"><p>Freedom does not mean to do what you want, but to want what is called for.</p><div class="who">Dr. Batya Yaniger<span>Logotherapy &amp; the Search for Meaning</span></div></div>
+      <div class="pq"><p>It's not a bug, it's a feature. The world is recreated every single moment — and so are you.</p><div class="who">Dr. Yehiel Harari<span>Tanya &amp; Chasidic Psychology</span></div></div>
+      <div class="pq"><p>Shabbat is the still point of the turning world… it is when we let the spirit breathe.</p><div class="who">Dr. Aaron Cherniak<span>citing Rabbi Jonathan Sacks · Shabbat &amp; Rest</span></div></div>
+      <div class="pq"><p>From the days of Freud, here we are — the world now recognizes Judaism as an incredible repository of insight into the human psyche.</p><div class="who">Dr. David Rosmarin<span>Inaugural JSICP Award recipient</span></div></div>
+    </div>
+
+    <div class="session-map reveal">
+      <div class="smrow"><div class="who">Dr. Kenneth Pargament<small>Keynote</small></div><p>Assess spirituality as routinely as anything else, and lead with therapeutic humility — "Tell me more."</p></div>
+      <div class="smrow"><div class="who">Dr. Lisa Miller<small>Keynote</small></div><p>A natural, neuroprotective spiritual capacity, cultivated by passing the torch across generations.</p></div>
+      <div class="smrow"><div class="who">Rabbi Yakov Danishefsky<small>Fireside Chat</small></div><p>Beneath trauma sits moral injury — and beneath that, spiritual injury, which needs spiritual repair.</p></div>
+      <div class="smrow"><div class="who">Dr. Batya Yaniger<small>Logotherapy</small></div><p>Frankl's meaning-centered method: we are always free to choose our response, and meaning is always available.</p></div>
+      <div class="smrow"><div class="who">Dr. Nachi Felt<small>Musar</small></div><p>Discipline reframed as accountability — closing the gap from knowledge to action.</p></div>
+      <div class="smrow"><div class="who">Dr. Aaron Cherniak<small>Shabbat &amp; Rest</small></div><p>Empirical work on Shabbat as protection against burnout and being "on call 24/7."</p></div>
+      <div class="smrow"><div class="who">Dr. Yehiel Harari<small>Tanya &amp; Chasidut</small></div><p>Change the question, not just the symptom; live in the present as a partner in creation.</p></div>
+      <div class="smrow"><div class="who">Dr. Aryeh Lazar<small>The Double-Edged Sword</small></div><p>Religion can buffer or amplify distress — the question is how a person's faith is working for them.</p></div>
+      <div class="smrow"><div class="who">Dr. Joanne Zagnoev<small>Soul Therapy</small></div><p>The Tanya's godly soul alongside attachment theory: God as the secure base of infinite worth.</p></div>
+      <div class="smrow"><div class="who">Rabbi Daniel Schonbuch<small>Frankl, Practically</small></div><p>A 30-day meaning workbook that moves logotherapy from philosophy to clinical practice.</p></div>
+      <div class="smrow"><div class="who">Dr. Rotem Regev<small>Collective Resilience</small></div><p>Naming "compounded traumatic reality" for Jewish clinicians and rebuilding resilience through the CHAI method.</p></div>
+      <div class="smrow"><div class="who">Dr. Levi Weinstein<small>Drama Therapy</small></div><p>Embodied ritual — the mikvah, bibliodrama — and Hasidic structure as therapeutic tools.</p></div>
+      <div class="smrow"><div class="who">Dr. David Lester<small>Bibliotherapy</small></div><p>Hasidic stories as a mirror for the soul: "God wants the heart."</p></div>
+      <div class="smrow"><div class="who">Moshe Fordsham<small>Addiction &amp; Recovery</small></div><p>Emulating God's unconditional positive regard; finding the nekuda tova — one point of goodness.</p></div>
+      <div class="smrow"><div class="who">Dr. David Rosmarin<small>Closing &amp; Award</small></div><p>Building the empirical foundation: validated measures of trust in God and the SPIRIT protocol.</p></div>
+    </div>
+  </div>
+</section>
+
 <!-- ===== COALITION ===== -->
 <section class="coal topo-deep" data-screen-label="Coalition">
   <div class="wrap">
@@ -370,6 +468,45 @@
           <span class="g intl">France</span><span class="g intl">Argentina</span>
           <span class="g intl">UAE</span><span class="g intl">Romania</span>
           <span class="g intl">Germany</span><span class="g intl">United Kingdom</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== IN THE ROOM (chat sentiment) ===== -->
+<section class="room topo-deep" data-screen-label="In the Room">
+  <div class="wrap">
+    <div class="sec-head center reveal on-dark">
+      <div class="eyebrow center on-dark">In the Room, in Real Time</div>
+      <h2>The chat never stopped</h2>
+      <p>For six hours a parallel conversation ran in the chat — a steady stream of gratitude, hard clinical questions, and shared resources among professionals who had rarely found a room like this.</p>
+    </div>
+    <div class="room-grid">
+      <div class="chat-quotes reveal">
+        <div class="cq"><p>This is one of the most meaningful presentations I have heard.</p><div class="who">Yocheved · chaplain, Jerusalem</div></div>
+        <div class="cq"><p>Profoundly moved, here.</p><div class="who">Shoshana · MD, New York</div></div>
+        <div class="cq"><p>The torchbearer is human, and the flame is Divine.</p><div class="who">Shelley · therapist</div></div>
+        <div class="cq"><p>I think of the "G-d receptors" in the brain as Hashem's fingerprint.</p><div class="who">Shoshana · MD, New York</div></div>
+        <div class="cq"><p>This was truly transformative.</p><div class="who">Avigayil · LCSW, Maryland</div></div>
+        <div class="cq"><p>Incredible questions. Incredible conference.</p><div class="who">Raquel · Toronto</div></div>
+        <div class="cq"><p>This experience has been amazing — thanks to everyone!</p><div class="who">Patricia · MSW, LCSW</div></div>
+      </div>
+      <div class="room-side reveal">
+        <div class="room-card">
+          <h3>What they wrestled with</h3>
+          <ul>
+            <li>Defining spirituality apart from religion</li>
+            <li>Where the evidence is for specific practices</li>
+            <li>Recognizing spiritual abuse and negative religious coping</li>
+            <li>Staying within scope when you're not a clergy member</li>
+            <li>Reaching unaffiliated clients and the "spiritual void"</li>
+            <li>Integrating this work inside skeptical agencies</li>
+          </ul>
+        </div>
+        <div class="room-card">
+          <h3>The conversation continued</h3>
+          <p>By day's end the audience had spun up a shared <b>WhatsApp group</b>, traded reading lists and clinical resources, and floated a working group to keep building the field — proof the appetite outlasted the broadcast.</p>
         </div>
       </div>
     </div>
