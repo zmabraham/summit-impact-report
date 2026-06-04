@@ -73,7 +73,7 @@
       <div class="stat reveal d1"><div class="n"><span data-count="6">0</span></div><div class="t"><b>CE credit hours</b> across three accreditation pathways — APA · NASW · NY State Board of Regents</div></div>
       <div class="stat reveal d2"><div class="n"><span data-count="12">0</span></div><div class="t">Accredited learning
 objectives </div></div>
-      <div class="stat reveal d3"><div class="n"><span data-count="130">0</span></div><div class="t">Post-event evaluations completed (the data behind every on this page)</div></div>
+      <div class="stat reveal d3"><div class="n"><span data-count="130">0</span></div><div class="t">Post-event evaluations completed (the data behind every number on this page)</div></div>
     </div>
   </div>
 </section>
@@ -450,7 +450,13 @@ addEventListener('scroll', () => {
 /* ============ counters ============ */
 function runCounter(el){
   const target = parseFloat(el.dataset.count);
-  if (reduce){ el.textContent = target.toLocaleString('en-US'); return; }
+  const final = target.toLocaleString('en-US');
+  if (reduce){ el.textContent = final; return; }
+  /* reserve the final width up front so the layout doesn't jitter while counting */
+  el.textContent = final;
+  el.style.display = 'inline-block';
+  el.style.minWidth = Math.ceil(el.getBoundingClientRect().width) + 'px';
+  el.textContent = '0';
   const dur = 1700, t0 = performance.now();
   function tick(now){
     const p = Math.min((now - t0) / dur, 1);
@@ -574,7 +580,8 @@ const io = new IntersectionObserver(entries=>{
   });
 },{threshold:.2});
 document.querySelectorAll('.reveal,.worldlist,.geo').forEach(e=>io.observe(e));
-document.querySelectorAll('.hero [data-count]').forEach(runCounter);
+/* wait for fonts so the reserved counter widths are measured accurately */
+document.fonts.ready.then(()=>document.querySelectorAll('.hero [data-count]').forEach(runCounter));
 
 /* stagger world list rows */
 document.querySelectorAll('.worldlist .country').forEach((c,i)=>c.style.transition=`opacity .6s ease ${i*0.07}s, transform .6s ease ${i*0.07}s, background .3s, padding .3s`);
