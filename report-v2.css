@@ -246,7 +246,7 @@ nav.top a:hover{color:var(--gold);opacity:1}
 .country{display:flex;align-items:center;gap:16px;padding:15px 6px;border-bottom:1px solid var(--line-soft);transition:.3s;opacity:0;transform:translateX(18px)}
 .worldlist.on .country{opacity:1;transform:none}
 .country:hover{background:rgba(56,242,236,.05);padding-left:14px}
-.country .flag{font-size:22px;filter:saturate(.92)}
+.country .flag{font-family:var(--label);font-weight:700;font-size:10.5px;letter-spacing:.08em;color:var(--gold);background:rgba(56,242,236,.08);border:1px solid var(--line-soft);border-radius:6px;width:36px;padding:4px 0;text-align:center;flex:none}
 .country .nm{font-size:15.5px;color:var(--ink);font-weight:400}
 .country .cities{margin-left:auto;font-family:var(--sans);font-size:12.5px;letter-spacing:0;color:var(--white-64);text-align:right}
 .reach-line{margin-top:30px;font-family:var(--quote);font-style:italic;font-size:20px;color:var(--gold-2)}
@@ -407,6 +407,7 @@ details.objectives .obj-body{padding:0 28px 26px;color:var(--muted);font-size:14
 .cta-card .btn{align-self:flex-start}
 .finale{text-align:center;padding-top:30px}
 .finale h2{font-size:clamp(38px,5.4vw,72px)}
+.finale-date{margin-top:26px;font-family:var(--label);font-weight:700;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--white-64)}
 
 /* ---------- footer ---------- */
 footer{border-top:1px solid var(--line);padding:70px 0 50px;position:relative;z-index:2;background:linear-gradient(180deg,rgba(30,106,103,.18),rgba(15,33,36,.5))}
